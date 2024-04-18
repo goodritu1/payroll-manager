@@ -15,31 +15,36 @@ const collectEmployees = function () {
     const employee = {
       firstName: firstName,
       lastName: lastName,
-      salary: salary,
+      salary: parseInt(salary),
 
     }  
     employees.push(employee);
 
-    wish = confirm(" do you want to add more employee");
+    wish = confirm(" if you want to add more employee press `OK` if not press `Cancel` ");
   }
-  console.log(employees);
+  
   return employees;
+  
   // sorting employees alphabetically
 
-  employees.sort(employees.lastName);
+employees.sort(employees.firstName);
+ 
 }
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   //  first we calculate the total salary
   let total =0;
-  for( const employee of employeesArray){
-total += employee.salary;
+  for (i=0; i<employeesArray.length; i++){
+    console.log(`${employeesArray[i].salary}`);
+    total += (employeesArray[i].salary);
   }
+  console.log(total);
+// 
+
    // TODO: Calculate and display the average salary
-  const averageSalary =total / employeesArray.length;
+  const averageSalary = total/ employeesArray.length;
   console.log(`average salary of our ${employeesArray.length} employees is ${averageSalary}`);
- 
 
 
 }
